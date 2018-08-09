@@ -114,10 +114,11 @@
 
             _validateSession(){
                 firebase.auth().onAuthStateChanged( user => {
-                    this.response.useruid = user.uid;
+
                     this.response.labuid = this.lab.uid;
 
                     if(user){
+                        this.response.useruid = user.uid;
                         this._createMasterEvent(event, this.response);
                     }
                     else{
